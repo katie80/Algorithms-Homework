@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Find the Sum of the Multiples</title>
+</head>
+<body>
+<script>
+	var arrNums = [];
+	var i = 1;
+	while (i < 1500) {
+		if (i % 3 === 0 || i % 5 === 0) {
+			arrNums.push(i);
+		}
+		i++;
+	}
+
+	function getSum(total, num) {
+			return total + num;
+	}
+	
+	function myFunction(item) {
+			console.log(arrNums.reduce(getSum));    //i have a very vague understanding of
+	}                         //how/why this works and i would like to
+														//discuss it with one of you this week
+	myFunction();                   //if we don't go over it in class
+
+
+
+
+
+
+
+</script>
+
+
+
+	
+</body>
+</html>

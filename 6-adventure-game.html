@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dungeon Game</title>
+</head>
+<body>
+
+<script>
+
+function game() {
+
+	var finishedGame = false;
+	while (finishedGame !== true) {
+		var input = prompt("You are in a mysterious room. There's a door to the west and a door to the north. Which way do you want to go? Enter WEST or NORTH");
+
+		// input.toUpperCase();
+
+		if (input === "WEST") {
+			input = prompt("You've found a shield! You pick it up and head back into the first room to the east. Now that you have a shield, let's go to the NORTH room");
+
+				// input.toUpperCase();
+
+				if (input === "NORTH") {
+					input = prompt("Hooray! The dragon tries to breathe fire on you, but your shield blocks it. You manage to get past it and spot a door to the NORTH. Go through it!");
+					// input.toUpperCase();
+					if (input === "NORTH") {
+						if (input === "NORTH") {
+							alert("You've made it out alive! You win!");
+							finishedGame = true;
+						} 
+					}
+				}
+
+				// input.toUpperCase();
+
+		} else if (input === "NORTH") {
+			input = prompt("Oh no! In the north room you encounter a dragon, but you're not armed! The dragon eats you and you lose. Do you want to play again? YES or NO");
+				if (input === "YES") {
+					game();
+				} else {
+					finishedGame = true;
+				}
+			}
+	}
+}
+
+game();
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

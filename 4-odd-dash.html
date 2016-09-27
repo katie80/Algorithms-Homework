@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Dash the Odds</title>
+</head>
+<body>
+
+<script>
+
+	//ask for a number
+	var number = prompt("Give me a number");
+
+	//turn number into an array (split at "")
+	var numArr = number.split("");
+
+	//turn the strings into integers
+	numArr = numArr.map(Number);
+
+	//determine if two consecutive numbers are odd
+	//if they are, splice a "-" between their indices
+	i = 0;
+	while (i < numArr.length) {
+		if (numArr[i] % 2 === 1 && numArr[i + 1] % 2 === 1) {
+			numArr.splice((i + 1), 0, "-");
+		}
+		i++;
+	};
+
+	//join the numbers and dashes
+	numArr = numArr.join('');
+
+	//display it
+	console.log(numArr);
+
+	//booyah
+
+
+
+
+
+
+</script>
+	
+</body>
+</html>

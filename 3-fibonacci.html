@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fibonacci</title>
+</head>
+<body>
+
+<script>
+  //By considering the terms in the Fibonacci sequence whose values do not exceed two million, find the sum of the even-valued terms. (hint: if (a % 2 == 0) { ... })
+
+  //first, make an array of the fibonacci numbers up to 200 (as a placeholder for 2M)
+  // arr[i + 1] = arr[i] + arr[i-1]
+
+  var arrFib = [1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
+
+  i = arrFib.length - 1; //starts at i = 9, which is 89 right now
+  while (arrFib[i] < 2000000) {
+	arrFib[i + 1] = arrFib[i] + arrFib[i - 1];
+	i++;
+  }
+
+  console.log(arrFib);
+
+
+
+  //then, filter out the ones that are odd
+
+  var evens = [];
+  var i = 0;
+  while (arrFib[i] < 2000000) {
+	if (arrFib[i] % 2 === 0) {
+	  evens.push(arrFib[i]);
+	}
+	i++;
+  }
+
+  console.log(evens);
+
+
+
+  //finally, add up the remaining values
+
+  function getSum(total, num) {
+	  return total + num;
+  }
+  
+  function myFunction(item) {
+	  console.log(evens.reduce(getSum));
+  }
+  
+  myFunction();
+
+
+
+
+</script>
+  
+</body>
+</html>

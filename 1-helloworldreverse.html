@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reverse "Hello World"</title>
+</head>
+<body>
+<script>  
+//using .reverse() to solve
+	var hello = "Hello World";
+	hello = (hello.split(""));
+
+	hello = hello.reverse();
+
+	console.log(hello.join(""));
+
+
+//using a for loop to solve
+	var hello = "Hello World";
+	hello = (hello.split(""));
+
+	var backwards = [];
+
+	for (i = 0; hello.length > 0; i++) {
+		backwards = hello.pop();
+		console.log(backwards); //displays each letter as a separate array value
+	}
+
+
+
+//using a while loop to solve
+	var hello = "Hello World";
+	hello = (hello.split(""));
+	var backwards = [];
+
+	var i = 0;
+	while (hello.length > 0) {
+		backwards += hello.pop();
+	}
+
+	console.log(backwards);
+
+
+
+
+</script>
+	
+</body>
+</html>

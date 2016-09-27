@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Let me guess your number</title>
+</head>
+<body>
+
+<script>
+
+	var arr = new Array(100);
+	for (i  = 0; i < arr.length; i++) {
+		arr[i] = i + 1;
+	}
+
+	var answer = prompt("Think of a number 1-100 (including 1 and 100). Don't tell me what it is! I am going to ask you some questions now. First, is your number odd, or even?");
+
+	answer = answer.toLowerCase();
+
+	if (answer === "even") {
+		arr = arr.filter(function(c,i,a){return c % 2 == 0});
+	} else {
+		arr = arr.filter(function(c,i,a){return c % 2 == 1});
+	}
+
+	answer = prompt("Yes or no: is your number less than 51?");
+
+	while (arr.length > 1) {
+
+		answer = answer.toLowerCase();
+
+		if (answer === "no") {
+			arr = arr.slice((arr.length/2), (arr.length));
+			answer = prompt("Yes or no: is your number less than " + arr[Math.floor(arr.length / 2)] + "?");
+		} else {
+			arr = arr.slice(0, (arr.length/2));
+			answer = prompt("Yes or no: is your number less than " + arr[Math.floor(arr.length / 2)] + "?");
+		}
+
+		if (arr.length <= 2) {
+			answer = prompt ("Yes or no: is your number " + arr[0] + "?");
+			if (answer === "yes") {
+				alert("I knew it! Your number is " + arr[0] + "!");
+				arr = arr.slice(0, (arr.length/2));
+			} else {
+				alert("Aha! I found your number! It's " + arr[1] + "!");
+				arr = arr.slice(0, (arr.length/2));
+			}
+		}
+	}
+
+
+
+
+</script>
+	
+</body>
+</html>
